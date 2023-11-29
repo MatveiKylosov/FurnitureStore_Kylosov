@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FurnitureStore_Kylosov.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,15 @@ namespace FurnitureStore_Kylosov
     /// </summary>
     public partial class MainWindow : Window
     {
+        Pages.Main m;
+        Pages.Categories c;
         public MainWindow()
         {
             InitializeComponent();
-            OpenPage(new Pages.Main());
+            m = new Pages.Main(delegate { OpenPage(c); });
+            c = new Pages.Categories(delegate { OpenPage(m); });
 
+            OpenPage(m);
         }
         public void OpenPage(Page page)
         {

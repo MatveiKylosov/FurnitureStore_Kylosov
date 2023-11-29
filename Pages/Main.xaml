@@ -33,6 +33,8 @@
             <Image Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,10,0,0" Source="/Images/telegramm.png"/>
             <Label Content="Мебель по карману" Margin="140, 5, 140, 5" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
             <Label x:Name="PriceNow" Content="Текущая стоимость - " Margin="85,10,0,0" Foreground="#FFFFFF" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontWeight="Bold"/>
+
+            <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="125" Height="25" Margin="0,10,140,0" Content="Категории" Click="Button_Click"/>
             <Button x:Name="Trash" HorizontalAlignment="Right" VerticalAlignment="Top" Width="125" Height="25" Margin="0,10,10,0" Content="Корзина (0)"/>
         </Grid>
         <ScrollViewer Margin="5,55,5,5" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">

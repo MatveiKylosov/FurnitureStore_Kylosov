@@ -22,15 +22,18 @@ namespace FurnitureStore_Kylosov.Pages
     {
         public List<Classes.Item> items = new List<Classes.Item>();
         static Main mw;
+        public delegate void OpenCat();
+        public OpenCat openCat;
         int Price = 0;
 
         public int price{ get { return Price; } set { Price = value; PriceNow.Content = $"Текущая стоимость - {value}"; } }
-        public Main()
+        public Main(OpenCat openCat)
         {
             mw = this;
             InitializeComponent();
             items.Add(new Classes.Item("Шкаф", 20000, "schcaf.jpg", mw));
             LoadItems();
+            this.openCat = openCat;
         }
         public void LoadItems()
         {
@@ -39,6 +42,11 @@ namespace FurnitureStore_Kylosov.Pages
             {
                 parent.Children.Add(new Elements.Item(item));
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            openCat();
         }
     }
 }

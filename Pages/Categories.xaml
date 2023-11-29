@@ -1,0 +1,55 @@
+﻿<Page x:Class="FurnitureStore_Kylosov.Pages.Categories"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FurnitureStore_Kylosov.Pages"
+      mc:Ignorable="d" 
+     d:DesignHeight="420" d:DesignWidth="780"
+      Title="Main">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/background.jpg"/>
+        </Grid.Background>
+        <Grid.Resources>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="#FF69DE32"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="BorderBrush" Value="#FFABADB3"/>
+            </Style>
+        </Grid.Resources>
+
+        <Grid VerticalAlignment="Top" Height="50" Background="#7F000000">
+            <Grid.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </Grid.Resources>
+
+            <Image Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Source="/Images/vk.png"/>
+            <Image Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,10,0,0" Source="/Images/telegramm.png"/>
+            <Label Content="Мебель по карману" Margin="140, 5, 140, 5" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+
+            <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="125" Height="25" Margin="0,10,10,0" Content="Перейти в категорию" Click="Button_Click"/>
+        </Grid>
+        
+        <Grid Margin="0,55,0,0">
+            <Grid Margin="35,10,541,10" Background="Gray">
+                <Label Content="Стулья" Foreground="White" FontSize="20" Margin="64,10,64,294"/>
+                <TextBlock Margin="10,51,10,10"  Foreground="White" FontSize="15" TextWrapping="Wrap" Text="Стулья - это неотъемлемый элемент любого интерьера, будь то дом, офис или общественное место. Они предлагают комфорт и функциональность, а также добавляют эстетическую ценность пространству. "/>
+            </Grid>
+            <Grid Margin="288,10,288,10" Background="Gray">
+                <Label Content="Кресла" Foreground="White" FontSize="20" Margin="64,10,64,294"/>
+                <TextBlock Margin="10,51,10,10"  Foreground="White" FontSize="15" TextWrapping="Wrap" Text="это символ роскоши и комфорта в вашем доме или офисе. Они предлагают идеальное место для отдыха после долгого дня или для уютного чтения книги. В этой категории вы найдете разнообразие кресел, включая кресла-качалки, кресла-мешки, кресла для гостиной и многое другое."/>
+            </Grid>
+
+            <Grid Margin="550,10,26,10" Background="Gray">
+                <Label Content="Диваны" Foreground="White" FontSize="20" Margin="64,10,56,294"/>
+                <TextBlock Margin="10,51,10,10"  Foreground="White" FontSize="15" TextWrapping="Wrap" Text="это центральный элемент любой гостиной, предлагающий комфорт и стиль. Они идеально подходят для отдыха, просмотра телевизора или проведения времени с семьей и друзьями. В этой категории вы найдете разнообразие диванов, включая секционные диваны, диваны-кровати многое другое. "/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
