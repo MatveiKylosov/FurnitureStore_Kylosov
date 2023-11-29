@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace FurnitureStore_Kylosov.Elements
 {
@@ -21,6 +22,9 @@ namespace FurnitureStore_Kylosov.Elements
     /// </summary>
     public partial class Item : UserControl
     {
+        public delegate void Price(int i);
+        Price pr;
+
         public Item(Classes.Item item)
         {
             InitializeComponent();
@@ -35,6 +39,29 @@ namespace FurnitureStore_Kylosov.Elements
                 price.Content = item.price;
                 name.Content = item.name;
             }
+
+            pr = item.AddPrice;
+        }
+
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex r = new Regex("[^0-9]+");
+            e.Handled = r.IsMatch(e.Text);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            pr(int.Parse(Count.Text));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Count.Text = $"{(1 + int.Parse(Count.Text) > 5 ? 5 : 1 + int.Parse(Count.Text))}";
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Count.Text = $"{(int.Parse(Count.Text) - 1 < 0? 0 : int.Parse(Count.Text) - 1)}";
         }
     }
 }

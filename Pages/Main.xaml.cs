@@ -21,10 +21,15 @@ namespace FurnitureStore_Kylosov.Pages
     public partial class Main : Page
     {
         public List<Classes.Item> items = new List<Classes.Item>();
+        static Main mw;
+        int Price = 0;
+
+        public int price{ get { return Price; } set { Price = value; PriceNow.Content = $"Текущая стоимость - {value}"; } }
         public Main()
         {
+            mw = this;
             InitializeComponent();
-            items.Add(new Classes.Item("Шкаф", 20000, "schcaf.jpg"));
+            items.Add(new Classes.Item("Шкаф", 20000, "schcaf.jpg", mw));
             LoadItems();
         }
         public void LoadItems()
