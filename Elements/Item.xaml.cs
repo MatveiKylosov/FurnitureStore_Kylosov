@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.IO;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -20,9 +21,20 @@ namespace FurnitureStore_Kylosov.Elements
     /// </summary>
     public partial class Item : UserControl
     {
-        public Item()
+        public Item(Classes.Item item)
         {
             InitializeComponent();
+
+            if (item != null)
+            {
+                if (File.Exists(Directory.GetCurrentDirectory() + "/Images/Items/" + item.src))
+                    image.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/Images/Items/" + item.src));
+                else
+                    image.Source = new BitmapImage(new Uri(System.IO.Directory.GetCurrentDirectory() + "/Images/Items/placeholder.png"));
+
+                price.Content = item.price;
+                name.Content = item.name;
+            }
         }
     }
 }
