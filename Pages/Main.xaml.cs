@@ -32,6 +32,10 @@ namespace FurnitureStore_Kylosov.Pages
             mw = this;
             InitializeComponent();
             items.Add(new Classes.Item("Шкаф", 20000, "schcaf.jpg", mw));
+            items.Add(new Classes.Item("Шкаф-купе", 13000, "schcafkype.jpg", mw));
+            items.Add(new Classes.Item("Шкаф-аниме", 11000, "schcafanime.jpg", mw));
+            items.Add(new Classes.Item("Кресло для деда", 15000, "dead.jpg", mw));
+            items.Add(new Classes.Item("Кресло", 17000, "kreclo.jpg", mw));
             LoadItems();
             this.openCat = openCat;
         }
